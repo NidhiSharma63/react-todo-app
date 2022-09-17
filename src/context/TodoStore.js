@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 
 export const Store = createContext();
 
@@ -8,7 +8,7 @@ const reducer = (state,action) =>{
       if(action.payload==='') return state;
       return{
         ...state,
-        todos:[...state.todos,action.payload]
+        todos:[...state.todos,action.payload],
       }
     }
     case 'DeleteTask':{
@@ -30,17 +30,33 @@ const reducer = (state,action) =>{
         }),
       }
     }
+    default:
+      break;
   }
   return state;
 }
 const initialState = {
-  todos:[],
+  todos:[]
 };
 
 export function StoreProvider({ children }) {
+
+  useEffect(() => {
+    const todo = JSON.parse(localStorage.getItem('todo'));
+    state.todos=todo
+    if(todo){
+      state.todos=todo;
+    }else{
+      state.todos=[]
+    }
+   }, []);
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const value = { state, dispatch };
+  useEffect(() => {
+      localStorage.setItem("todo", JSON.stringify(state.todos));
+  }, [state.todos]);
+
 
   return <Store.Provider value={value}>{children}</Store.Provider>;
 }

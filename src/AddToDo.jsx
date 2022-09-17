@@ -4,22 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Store } from './context/TodoStore';
 
-// const reducer = (state,action) =>{
-//   switch(action.type){
-//     case 'AddToDo':{
-//       if(action.payload==='') return state;
-//       return{
-//         ...state,
-//         todos:[...state.todos,action.payload]
-//       }
-//     }
-//   }
-//   return state;
-// }
-
-// const initialState = {
-//   todos:[],
-// };
 const AddToDo = () => {
 
   const {state,dispatch} = useContext(Store);

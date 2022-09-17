@@ -4,9 +4,9 @@ import { Store } from './context/TodoStore';
 
 const ShowTodo = ({TodoArray,setTaskValue}) => {
   const {dispatch} = useContext(Store);
-  console.log(TodoArray)
 
   const editHanlder = (todo) =>{
+    setTaskValue(todo.task);
     dispatch({type: 'DeleteTask',payload:todo});
   }
   return (
