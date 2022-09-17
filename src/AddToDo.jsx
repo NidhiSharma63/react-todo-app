@@ -15,15 +15,18 @@ const AddToDo = () => {
     setTaskValue('')
   }
   return (
-    <div>
+    <div className='add-task'>
+     <div className='top-section'>
       <input 
-        type="text" 
-        placeholder='Add you daily task'
-        value={taskValue}
-        onChange={(e)=>setTaskValue(e.target.value)}
-        />
-      <button onClick={setToDo}>Add to task</button>
-      <ShowTodo TodoArray={state.todos}/>
+          type="text" 
+          placeholder='Add you daily task'
+          value={taskValue}
+          onChange={(e)=>setTaskValue(e.target.value)}
+          id='input'
+          />
+        <button id='add-task-btn' onClick={setToDo}>Add to task</button>
+     </div>
+      <ShowTodo setTaskValue={setTaskValue}/>
     </div>
   )
 }

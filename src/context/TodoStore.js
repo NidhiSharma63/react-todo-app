@@ -8,7 +8,7 @@ const reducer = (state,action) =>{
       if(action.payload==='') return state;
       return{
         ...state,
-        todos:[...state.todos,action.payload],
+        todos:[action.payload,...state.todos],
       }
     }
     case 'DeleteTask':{

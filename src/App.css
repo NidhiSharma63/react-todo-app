@@ -11,9 +11,87 @@ body{
 }
 .main-wrapper{
   width: 500px;
-  border: 1px solid white;
-  min-height: 300px;
+  height: 350px;
+  background-color: hsla(0, 2%, 11%, 0.322);
+  padding-bottom: 1rem;
 }
+.add-task{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  gap: 1.7rem;
+}
+.top-section{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: .8rem 0rem;
+  box-shadow: 0px 0px .2rem 0px black;
+}
+#input{
+  border: none;
+  height: 1.9rem;
+  width: 14rem;
+  padding-left: 0.7rem;
+  border-radius: .3rem;
+  background-color: inherit;
+  color: white;
+  letter-spacing: .1rem;
+  box-shadow: 0px 0px 4px 0px inset black;
+}
+#input:focus{
+  outline: none;
+}
+#add-task-btn{
+  background-color: inherit;
+  box-shadow: 0px 0px 2px 0px black;
+  border: none;
+  color: white;
+  padding: .5rem .8rem;
+  border-radius: .2rem;
+  cursor: pointer;
+}
+
 .todo-wrapper{
   color: white
+}
+.bottom-section{
+  align-self: baseline;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: .7rem;
+  height: 90%;
+  overflow-y:scroll ;
+}
+.single-task{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: .9rem;
+  color: white;
+  border-radius: .5rem;
+  overflow-wrap: wrap;
+  gap: 1.5rem;
+  box-shadow: 0px 0px 4px 0px inset black;
+}
+.single-task p{
+  overflow-wrap: anywhere;
+
+}
+.fa-pen-to-square{
+  color: hsl(120, 44%, 50%);
+  cursor: pointer;
+  margin-right: .8rem;
+}
+.fa-trash{
+  color: hsl(0, 80%, 45%);
+  cursor: pointer;
 }
