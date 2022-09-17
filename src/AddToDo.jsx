@@ -1,4 +1,4 @@
-import React,{ useReducer,useRef, useState,useContext } from 'react';
+import React,{ useReducer,useRef, useState,useContext, useEffect } from 'react';
 import ShowTodo from './ShowTodo';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -10,10 +10,10 @@ const AddToDo = () => {
   const [taskValue,setTaskValue] = useState('');
 
   const setToDo = () =>{
+    if(taskValue==='') return;
     dispatch({type: 'AddToDo',payload:{id:uuidv4(),task:taskValue,isCompleted:false}});
     setTaskValue('')
   }
-
   return (
     <div>
       <input 
@@ -23,7 +23,7 @@ const AddToDo = () => {
         onChange={(e)=>setTaskValue(e.target.value)}
         />
       <button onClick={setToDo}>Add to task</button>
-      <ShowTodo TodoArray={state.todos} setTaskValue={setTaskValue}/>
+      <ShowTodo TodoArray={state.todos}/>
     </div>
   )
 }

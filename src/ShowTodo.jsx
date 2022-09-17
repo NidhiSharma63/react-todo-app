@@ -1,10 +1,9 @@
-import React,{ useContext,useRef } from 'react';
+import React,{ useContext,useRef,useEffect, useState } from 'react';
 import { Store } from './context/TodoStore';
 
 
-const ShowTodo = ({TodoArray,setTaskValue}) => {
-  const {dispatch} = useContext(Store);
-
+const ShowTodo = ({setTaskValue}) => {
+  const {state,dispatch} = useContext(Store);
   const editHanlder = (todo) =>{
     setTaskValue(todo.task);
     dispatch({type: 'DeleteTask',payload:todo});
@@ -12,7 +11,7 @@ const ShowTodo = ({TodoArray,setTaskValue}) => {
   return (
     <div className='todo-wrapper'>
       {
-        TodoArray.map((todo)=>{
+       state.todos.map((todo)=>{
           return(
             <div key={todo.id}>
               <input 

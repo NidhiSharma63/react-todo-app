@@ -35,26 +35,17 @@ const reducer = (state,action) =>{
   }
   return state;
 }
+
 const initialState = {
-  todos:[]
+  // check if something in localstorage if yes then give it otherwise return empty array 
+  todos:JSON.parse(localStorage.getItem('todo'))?JSON.parse(localStorage.getItem('todo')):[]
 };
 
 export function StoreProvider({ children }) {
-
-  useEffect(() => {
-    const todo = JSON.parse(localStorage.getItem('todo'));
-    state.todos=todo
-    if(todo){
-      state.todos=todo;
-    }else{
-      state.todos=[]
-    }
-   }, []);
   const [state, dispatch] = useReducer(reducer, initialState);
-
   const value = { state, dispatch };
   useEffect(() => {
-      localStorage.setItem("todo", JSON.stringify(state.todos));
+    localStorage.setItem("todo", JSON.stringify(state.todos));
   }, [state.todos]);
 
 
