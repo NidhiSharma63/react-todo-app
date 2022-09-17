@@ -20,7 +20,7 @@ const ShowTodo = ({setTaskValue}) => {
                 onClick={()=>dispatch({type: 'CompletedTask',payload:todo})}
               />
               <p>{todo.task}</p>
-              <div>
+              <div className='icon-wrap'>
                 <i className="fa-solid fa-pen-to-square" onClick={()=>{editHanlder(todo)}}></i>
                 <i className="fa-solid fa-trash" onClick={()=>dispatch({type: 'DeleteTask',payload:todo})}></i>
               </div>
