@@ -33,6 +33,7 @@ const AddToDo = () => {
      <div className='top-section'>
       <input 
         type="text" 
+        autoComplete='off'
         placeholder='Add you daily task'
         value={taskValue}
         onChange={(e)=>setTaskValue(e.target.value)}
