@@ -39,8 +39,13 @@ const AddToDo = () => {
         id='input'
       />
       {
-        showAddTaskBtn?<button className='btn' onClick={setToDo}>Add to task</button>
-        : <button className='btn' onClick={HandleEditTask}>EditYourTask</button>
+        showAddTaskBtn?
+        <button className='btn' onClick={setToDo}>
+          <span>Add Task</span><i className="fa-solid fa-plus"></i>
+        </button>
+        : <button className='btn' onClick={HandleEditTask}>
+          <span>EditYourTask</span><i className="fa-solid fa-plus"></i>
+        </button>
       }
      </div>
       <ShowTodo setShowAddTaskBtn={setShowAddTaskBtn} setEditObj={setEditObj} setTaskValue={setTaskValue}/>
