@@ -2,11 +2,12 @@ import React,{ useContext,useRef,useEffect, useState } from 'react';
 import { Store } from './context/TodoStore';
 
 
-const ShowTodo = ({setTaskValue}) => {
+const ShowTodo = ({setTaskValue,taskValue,setEditTaskValue}) => {
   const {state,dispatch} = useContext(Store);
   const editHanlder = (todo) =>{
     setTaskValue(todo.task);
-    dispatch({type: 'DeleteTask',payload:todo});
+    // todo.task=taskValue
+    // dispatch({type: 'DeleteTask',payload:todo});
   }
   return (
     <div className='bottom-section'>

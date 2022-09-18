@@ -6,8 +6,9 @@ import { Store } from './context/TodoStore';
 
 const AddToDo = () => {
 
-  const {state,dispatch} = useContext(Store);
+  const {dispatch} = useContext(Store);
   const [taskValue,setTaskValue] = useState('');
+  const [editTaskValue,setEditTaskValue] = useState('')
 
   const setToDo = () =>{
     if(taskValue==='') return;
@@ -26,7 +27,7 @@ const AddToDo = () => {
           />
         <button id='add-task-btn' onClick={setToDo}>Add to task</button>
      </div>
-      <ShowTodo setTaskValue={setTaskValue}/>
+      <ShowTodo taskValue={taskValue} setEditTaskValue={setEditTaskValue} setTaskValue={setTaskValue}/>
     </div>
   )
 }
