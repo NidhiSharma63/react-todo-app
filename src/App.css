@@ -116,6 +116,9 @@ body{
   html{
     font-size: 52.3%;
   }
+  .bottom-section{
+    margin-left: 2.2rem;
+  }
   .single-task p{
     width: 80%;
   }
@@ -134,5 +137,14 @@ body{
   }
   .btn span{
     display: none;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .main-wrapper{
+    width: 95%;
+  }
+  #input{
+    width: 70%;
   }
 }
