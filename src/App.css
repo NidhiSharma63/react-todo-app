@@ -121,6 +121,7 @@ body{
   }
   .single-task p{
     width: 80%;
+    line-height: 3rem;
   }
 }
 
@@ -146,5 +147,12 @@ body{
   }
   #input{
     width: 70%;
+  }
+  .bottom-section {
+    margin-left: 1.2rem;
+  }
+  .single-task p {
+    width: 60%;
+    font-size: 1.4rem;
   }
 }
