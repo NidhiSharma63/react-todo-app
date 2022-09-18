@@ -9,23 +9,26 @@
 <h3>Features and Description</h3>
 <p>The Todo-App's features include:</p>
 <p>
+
+[Add your daily task](https://nidhisharma63.github.io/react-todo-app/)
+
 <h4>Adding Tasks</h4>
 
-![Add](https://user-images.githubusercontent.com/25654606/120463734-d5e73e80-c3b9-11eb-9f71-4c32a14cfe3f.gif)
+<img src='./src/Images/Add.gif' alt='Adding task gif'/>
 </p>
 <p>
 <h4>Editing Tasks</h4>
 
-![Edit](https://user-images.githubusercontent.com/25654606/120463766-dc75b600-c3b9-11eb-8c6b-aa1d2f8fe0ca.gif)
+<img src='./src/Images/Edit.gif' alt='Editing task gif'/>
+
 </p>
 <p>
-<h4>Marking Tasks as completed</h4>
-
-![Completed](https://user-images.githubusercontent.com/25654606/120463779-e0093d00-c3b9-11eb-97bc-c1d2c3fac7f7.gif)
+<h4>Deleting the task</h4>
+  <img src='./src/Images/Delete.gif' alt='Deleting task gif'/>
 </p>
 <p>
 
 <h4>User Friendly UI</h4>
-
-![UI](https://user-images.githubusercontent.com/25654606/120463809-e7c8e180-c3b9-11eb-9afe-d2ff3ac69ee3.png)
+ <img src='./src/Images/todo.png' alt='Todo'/>
 </p>
+
