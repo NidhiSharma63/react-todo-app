@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -5,21 +7,30 @@
 html{
   font-size: 62.5%;
 }
+:root{
+  --wrapper-bg:hsla(0, 6%, 93%, 0.884);
+  --main-bg:hsla(0, 14%, 93%, 0.959);
+  --text-color:black;
+  --box-shadow-color:rgba(126, 123, 123, 0.973);
+}
 body{
-  background-color:rgb(6, 6, 12) ;
+  background-color: var(--main-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Merriweather', serif;
 }
 .main-wrapper{
   width: 80rem;
   height: 50rem;
-  background-color: hsla(0, 2%, 11%, 0.322);
+  background-color: var(--wrapper-bg);
+  box-shadow: 0px 0px 25px 0px rgba(70, 68, 68, 0.616) inset;
   padding-bottom: 1rem;
   overflow: hidden;
+  border-radius: .4rem;
 }
 .add-task{
   width: 100%;
@@ -36,7 +47,7 @@ body{
   align-items: center;
   justify-content: space-around;
   padding: 2rem 0rem;
-  box-shadow: 0px 0px .2rem 0px black;
+  box-shadow: 0px 0px .2rem 0px var(--box-shadow-color);
 }
 #input{
   border: none;
@@ -45,16 +56,17 @@ body{
   padding-left: 0.7rem;
   border-radius: .3rem;
   background-color: inherit;
-  color: white;
+  color: var(--text-color);
   letter-spacing: .1rem;
-  box-shadow: 0px 0px 4px 0px inset black;
+  box-shadow: 0px 0px 4px 0px inset var(--box-shadow-color);
   font-size: 1.6rem;
+  font-family: 'Merriweather', serif;
 }
 #input:focus{
   outline: none;
 }
 .btn{
-  box-shadow: 0px 0px 2px 0px black;
+  box-shadow: 0px 0px 2px 0px var(--box-shadow-color);
   border: none;
   color: white;
   padding: .9rem 2rem;
@@ -62,6 +74,7 @@ body{
   cursor: pointer;
   font-size: 1.6rem;
   background-color: hsl(240, 78%, 42%);
+  font-family: 'Merriweather', serif;
 }
 
 .btn i{
@@ -92,12 +105,13 @@ body{
   border-radius: .5rem;
   overflow-wrap: wrap;
   gap: 1.5rem;
-  box-shadow: 0px 0px 4px 0px inset black;
+  box-shadow: 0px 0px 4px 0px inset var( --box-shadow-color);
 }
 .single-task p{
   overflow-wrap: anywhere;
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: .1rem;
+  color: var(--text-color);
 }
 .fa-pen-to-square,
 .fa-trash{
@@ -153,6 +167,6 @@ body{
   }
   .single-task p {
     width: 60%;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
