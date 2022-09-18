@@ -11,8 +11,8 @@ const ShowTodo = ({setTaskValue,setEditObj,setShowAddTaskBtn}) => {
   }
   return (
     <div className='bottom-section'>
-      {
-       state.todos.map((todo)=>{
+      {state.todos.length>0?
+        state.todos.map((todo)=>{
           return(
             <div className='single-task' key={todo.id}>
               <input 
@@ -27,7 +27,8 @@ const ShowTodo = ({setTaskValue,setEditObj,setShowAddTaskBtn}) => {
               </div>
             </div>
           )
-        })
+        }):
+        <h1>Add your daily task</h1>
       }
     </div>
   )
