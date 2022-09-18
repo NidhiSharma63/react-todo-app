@@ -47,7 +47,7 @@ body{
 #input:focus{
   outline: none;
 }
-#add-task-btn{
+.btn{
   background-color: inherit;
   box-shadow: 0px 0px 2px 0px black;
   border: none;

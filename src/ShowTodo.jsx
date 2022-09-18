@@ -2,11 +2,12 @@ import React,{ useContext } from 'react';
 import { Store } from './context/TodoStore';
 
 
-const ShowTodo = ({setTaskValue,editTaskValue,setEditObj}) => {
+const ShowTodo = ({setTaskValue,setEditObj,setShowAddTaskBtn}) => {
   const {state,dispatch} = useContext(Store);
   const editHanlder = (todo) =>{
     setEditObj(todo);
-    setTaskValue(todo.task)    
+    setTaskValue(todo.task);
+    setShowAddTaskBtn(false);
   }
   return (
     <div className='bottom-section'>
@@ -19,7 +20,7 @@ const ShowTodo = ({setTaskValue,editTaskValue,setEditObj}) => {
                 defaultChecked={todo.isCompleted?true:false}
                 onClick={()=>dispatch({type: 'CompletedTask',payload:todo})}
               />
-              <p>{editTaskValue?editTaskValue:todo.task}</p>
+              <p>{todo.task}</p>
               <div className='icon-wrap'>
                 <i className="fa-solid fa-pen-to-square" onClick={()=>{editHanlder(todo)}}></i>
                 <i className="fa-solid fa-trash" onClick={()=>dispatch({type: 'DeleteTask',payload:todo})}></i>

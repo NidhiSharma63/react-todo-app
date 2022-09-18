@@ -8,8 +8,8 @@ const AddToDo = () => {
 
   const {state,dispatch} = useContext(Store);
   const [taskValue,setTaskValue] = useState('');
-  const [editTaskValue,setEditTaskValue] = useState('');
-  const [editObj,setEditObj] = useState({})
+  const [editObj,setEditObj] = useState({});
+  const [showAddTaskBtn,setShowAddTaskBtn] = useState(true)
 
   const setToDo = () =>{
     if(taskValue==='') return;
@@ -19,6 +19,9 @@ const AddToDo = () => {
 
   const HandleEditTask = () =>{
     setEditObj(editObj.task=taskValue);
+    setEditObj({});
+    setTaskValue('');
+    setShowAddTaskBtn(true)
   }
 
   useEffect(() => {
@@ -29,16 +32,18 @@ const AddToDo = () => {
     <div className='add-task'>
      <div className='top-section'>
       <input 
-          type="text" 
-          placeholder='Add you daily task'
-          value={taskValue}
-          onChange={(e)=>setTaskValue(e.target.value)}
-          id='input'
-          />
-        <button id='add-task-btn' onClick={setToDo}>Add to task</button>
-        <button onClick={HandleEditTask}>EditYourTask</button>
+        type="text" 
+        placeholder='Add you daily task'
+        value={taskValue}
+        onChange={(e)=>setTaskValue(e.target.value)}
+        id='input'
+      />
+      {
+        showAddTaskBtn?<button className='btn' onClick={setToDo}>Add to task</button>
+        : <button className='btn' onClick={HandleEditTask}>EditYourTask</button>
+      }
      </div>
-      <ShowTodo setEditObj={setEditObj} editTaskValue={editTaskValue} taskValue={taskValue} setEditTaskValue={setEditTaskValue} setTaskValue={setTaskValue}/>
+      <ShowTodo setShowAddTaskBtn={setShowAddTaskBtn} setEditObj={setEditObj} setTaskValue={setTaskValue}/>
     </div>
   )
 }
