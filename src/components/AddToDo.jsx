@@ -2,7 +2,7 @@ import React,{ useReducer,useRef, useState,useContext, useEffect } from 'react';
 import ShowTodo from './ShowTodo';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Store } from './context/TodoStore';
+import { Store } from '../context/TodoStore';
 
 const AddToDo = () => {
 

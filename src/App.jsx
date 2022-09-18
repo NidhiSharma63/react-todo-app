@@ -1,6 +1,6 @@
 import React from 'react';
-import AddToDo from './AddToDo';
-import './App.css'
+import AddToDo from './components/AddToDo';
+import './css/App.css'
 const App = () => {
   return (
     <div

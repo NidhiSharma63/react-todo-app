@@ -1,5 +1,5 @@
 import React,{ useContext } from 'react';
-import { Store } from './context/TodoStore';
+import { Store } from '../context/TodoStore';
 
 
 const ShowTodo = ({setTaskValue,setEditObj,setShowAddTaskBtn}) => {
