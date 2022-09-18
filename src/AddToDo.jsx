@@ -6,15 +6,25 @@ import { Store } from './context/TodoStore';
 
 const AddToDo = () => {
 
-  const {dispatch} = useContext(Store);
+  const {state,dispatch} = useContext(Store);
   const [taskValue,setTaskValue] = useState('');
-  const [editTaskValue,setEditTaskValue] = useState('')
+  const [editTaskValue,setEditTaskValue] = useState('');
+  const [editObj,setEditObj] = useState({})
 
   const setToDo = () =>{
     if(taskValue==='') return;
     dispatch({type: 'AddToDo',payload:{id:uuidv4(),task:taskValue,isCompleted:false}});
-    setTaskValue('')
+    setTaskValue('');
   }
+
+  const HandleEditTask = () =>{
+    setEditObj(editObj.task=taskValue);
+  }
+
+  useEffect(() => {
+    localStorage.setItem("todo", JSON.stringify(state.todos));
+  }, [editObj]);
+
   return (
     <div className='add-task'>
      <div className='top-section'>
@@ -26,8 +36,9 @@ const AddToDo = () => {
           id='input'
           />
         <button id='add-task-btn' onClick={setToDo}>Add to task</button>
+        <button onClick={HandleEditTask}>EditYourTask</button>
      </div>
-      <ShowTodo taskValue={taskValue} setEditTaskValue={setEditTaskValue} setTaskValue={setTaskValue}/>
+      <ShowTodo setEditObj={setEditObj} editTaskValue={editTaskValue} taskValue={taskValue} setEditTaskValue={setEditTaskValue} setTaskValue={setTaskValue}/>
     </div>
   )
 }
